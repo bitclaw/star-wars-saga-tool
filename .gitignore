@@ -29,7 +29,6 @@
 /bin/*
 !bin/console
 !bin/symfony_requirements
-/vendor/
 
 # Assets and user uploads
 /web/bundles/
@@ -50,3 +49,27 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# DOCKER
+# volumes
+/logs
+/db
+
+###> symfony/framework-bundle ###
+/symfony/.env.local
+/symfony/.env.local.php
+/symfony/.env.*.local
+/symfony/config/secrets/prod/prod.decrypt.private.php
+/symfony/public/bundles/
+/symfony/var/
+/symfony/vendor/
+###< symfony/framework-bundle ###
+
+
+
+/.env.*
+
+# IDE setting
+## PhpStorm
+.idea
+
