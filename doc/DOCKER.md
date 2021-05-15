@@ -27,7 +27,7 @@ Then, run:
 $ docker-compose up
 ```
 
-You are done, you can visit your Symfony application on the following URL: `http://symfony.localhost` (and access Kibana on `http://symfony.localhost:81`)
+You are done, you can visit your Symfony application on the following URL: `http://symfony.localhost` (and access Kibana on `http://star-wars-saga-tool.test:81`)
 
 _Note :_ you can rebuild all Docker images by running:
 
