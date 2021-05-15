@@ -15,6 +15,7 @@ $ heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
 $ heroku buildpacks:add heroku/php
 $ heroku buildpacks:add heroku-php-nginx
 $ heroku config:set PROJECT_PATH=symfony
+$ heroku config:set APP_SECRET=$(php -r 'echo bin2hex(random_bytes(16));') -a star-wars-saga-tool
 $ git push heroku main 
-$ heroku logs --tail
+$ heroku logs -a star-wars-saga-tool --tail
 ```
