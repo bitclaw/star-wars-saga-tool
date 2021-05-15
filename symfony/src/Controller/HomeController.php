@@ -12,6 +12,6 @@ class HomeController
      */
     public function index()
     {
-        return new Response('Route annotations working!');
+        return new Response('HomeController');
     }
 }
