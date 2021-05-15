@@ -3,16 +3,16 @@
 ## Initial Setup
 
 ```bash
-composer install
-php bin/console doctrine:migrations:migrate
-php bin/console doctrine:fixtures:load
-chmod -R 777 symfony/var
+$ composer install
+$ php bin/console doctrine:migrations:migrate
+$ php bin/console doctrine:fixtures:load
+$ chmod -R 777 symfony/var
 ```
 
 ## Route debugging
 
 ```bash
-php bin/console debug:router
+$ php bin/console debug:router
 ```
 
 ## Doctrine
@@ -37,7 +37,7 @@ $ php bin/console doctrine:migrations:execute --down 'DoctrineMigrations\Version
 ```bash
 $ symfony console make:entity
 $ php bin/console make:entity --regenerate
- php bin/console make:controller ProductController
+$ php bin/console make:controller ProductController
 ```
 
 ## Cache
