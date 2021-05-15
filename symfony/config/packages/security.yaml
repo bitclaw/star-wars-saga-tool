@@ -3,6 +3,12 @@ security:
     providers:
         database:
             entity: { class: App\Entity\User, property: email }
+    encoders:
+        App\Entity\User:
+            # Use native password encoder
+            # This value auto-selects the best possible hashing algorithm
+            # (i.e. Sodium when available).
+            algorithm: auto
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
