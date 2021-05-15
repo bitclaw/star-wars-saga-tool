@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{#    {{ dump(films) }}#}
+<ul id="navigation">
+    {% for film in films %}
+        <li>
+            <a href="#">
+                {{ film.title }}
+            </a>
+            <span>{{ film.release_date }}</span>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
