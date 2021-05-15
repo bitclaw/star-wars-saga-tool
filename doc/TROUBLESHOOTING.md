@@ -1,6 +1,6 @@
 # Troubleshooting
 
-* When visiting `http://symfony.localhost/` the following runtime exception happens:
+* When visiting `http://http://star-wars-saga-tool.test/` the following runtime exception happens:
 
 ```bash
 RuntimeException

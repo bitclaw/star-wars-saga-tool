@@ -15,7 +15,7 @@ Next, put your Symfony application into `symfony` folder and do not forget to ad
 
 ```bash
 # /etc/hosts
-127.0.0.1 symfony.localhost
+127.0.0.1 star-wars-saga-tool.test
 ```
 
 Make sure you adjust `database_host` in `parameters.yml` to the database container alias "db" (for Symfony < 4)
