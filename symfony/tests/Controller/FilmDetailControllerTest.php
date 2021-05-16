@@ -2,6 +2,7 @@
 
 namespace App\Tests\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class FilmDetailControllerTest extends WebTestCase
@@ -16,8 +17,10 @@ class FilmDetailControllerTest extends WebTestCase
 
     public function testFilmPageWhileLoggedIn(): void
     {
-        $this->markTestIncomplete();
         $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('user@gmail.com');
+        $client->loginUser($testUser);
         $crawler = $client->request('GET', '/film-detail/2');
 
         $this->assertResponseIsSuccessful();
