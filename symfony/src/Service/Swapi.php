@@ -14,11 +14,11 @@ class Swapi
         $this->client = $client;
     }
 
-    public function fetchFilms(): array
+    public function fetch($endpoint): array
     {
         $response = $this->client->request(
             'GET',
-            'https://swapi.dev/api/films/'
+            $endpoint
         );
 
         return $response->toArray();

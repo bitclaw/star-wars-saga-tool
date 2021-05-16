@@ -12,6 +12,7 @@ use App\Service\Film;
 
 class HomeController extends AbstractController
 {
+    const SWAPI_FILMS_ENDPOINT = 'https://swapi.dev/api/films/';
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_homepage")
@@ -21,7 +22,7 @@ class HomeController extends AbstractController
         $repository = $entityManager->getRepository(FilmEntity::class);
         $filmCount = $repository->count([]);
         if ($filmCount === 0) {
-            $films = $swapi->fetchFilms()['results'];
+            $films = $swapi->fetch(self::SWAPI_FILMS_ENDPOINT)['results'];
             $filmService->createMany($films);
         }
 
