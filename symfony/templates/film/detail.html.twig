@@ -11,5 +11,10 @@
         <span>{{ film.getProducer() }}</span><br>
         <span>{{ film.getReleaseDate() }}</span><br>
         <span>{{ film.getReleaseDate() }}</span><br>
+        <span>
+            {% for planet in film.getPlanets() %}
+                {{ planet }}
+            {% endfor %}
+        </span><br>
     </div>
 {% endblock %}
