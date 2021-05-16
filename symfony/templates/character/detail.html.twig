@@ -8,6 +8,15 @@
         <span>Gender:</span>
         <span>{{ character.getGender() }}</span><br>
         <span>Species</span>
-        <span>TBD</span><br>
+        <ul id="navigation">
+            {% for species in character->getSpecies() %}
+                <li>
+                    <span>{{ species.getName() }}</span>
+                    <span>{{ species.getClassification() }}</span>
+                    <span>{{ species.getDesignation() }}</span>
+                    <span>{{ species.getAverageHeight() }}</span>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

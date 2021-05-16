@@ -100,4 +100,15 @@ class Character
         }
         return $this;
     }
+
+    public function getSpecies(): ?Species
+    {
+        return $this->species;
+    }
+
+    public function setCategory(?Species $species): self
+    {
+        $this->species = $species;
+        return $this;
+    }
 }
