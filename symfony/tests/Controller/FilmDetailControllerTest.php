@@ -3,7 +3,7 @@
 namespace App\Tests\Controller;
 
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class FilmDetailControllerTest extends WebTestCase
 {
