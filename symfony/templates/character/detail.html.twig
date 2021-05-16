@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Character Detail Page{% endblock %}
+{% block body %}
+    <div style="margin-left: 30px;">
+        <span>Name:</span>
+        <span>{{ character.getName() }}</span><br>
+        <span>Gender:</span>
+        <span>{{ character.getGender() }}</span><br>
+        <span>Species</span>
+        <span>TBD</span><br>
+    </div>
+{% endblock %}

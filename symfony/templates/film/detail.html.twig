@@ -4,13 +4,30 @@
 {% block body %}
     <h1>Film detail page</h1>
     <div>
-        <span>{{ film.title }}</span><br>
-        <span>{{ film.getDirector() }}</span><br>
-        <span>{{ film.getReleaseDate() }}</span><br>
-        {% for character in film.getCharacters() %}
-            <span>{{ character.name }}</span><br>
-            <span>{{ character.gender }}</span><br>
-        {% endfor %}
+        <div style="margin-left: 30px;">
+            <span>Title:</span>
+            <span>{{ film.title }}</span><br>
+            <span>Director:</span>
+            <span>{{ film.getDirector() }}</span><br>
+            <span>Release date:</span>
+            <span>{{ film.getReleaseDate() }}</span><br>
+        </div>
+
+        <ul id="navigation">
+            {% for character in film.getCharacters() %}
+                <div style="margin-bottom: 15px;">
+                    <li>
+                        <span>Character name:</span>
+                        <a href="{{ path('character_detail', {'id': character.id}) }}">
+                            {{ character.name }}
+                        </a>
+                    </li>
+                    <span>Gender:</span>
+                    <span>{{ character.gender }}</span>
+                </div>
+
+            {% endfor %}
+        </ul>
     </div>
     <br>
 {% endblock %}
