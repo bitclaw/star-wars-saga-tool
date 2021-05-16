@@ -51,5 +51,9 @@ $ php bin/console cache:clear
 ## Testing
 
 ```bash
-$  php ./vendor/bin/phpunit
+$ php ./vendor/bin/phpunit
+# create the test database (star_wars_saga_tool_test)
+$ php bin/console --env=test doctrine:database:create
+# create the tables/columns in the test database
+$ php bin/console --env=test doctrine:schema:create
 ```
