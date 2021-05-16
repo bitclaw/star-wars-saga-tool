@@ -44,4 +44,24 @@ class Film
         $this->em->persist($entity);
         $this->em->flush();
     }
+
+    public function addCharacters(FilmEntity $film)
+    {
+        $batchSize = 20;
+        $endpoints = $film->getCharacterEndpoints();
+        $i = count($endpoints);
+        foreach($film->getCharacterEndpoints() as $endpoint) {
+            $response = $this->swapi->fetch($endpoint);
+            $character = new Character;
+            $character->setName($response['name']);
+            $character->setGender('gender');
+
+            if (($i % $batchSize) === 0) {
+                $this->em->flush();
+                $this->em->clear(); // Detaches all objects from Doctrine!
+            }
+        }
+        $this->em->flush(); //Persist objects that did not make up an entire batch
+        $this->em->clear();
+    }
 }
