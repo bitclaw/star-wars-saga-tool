@@ -7,6 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class FilmDetailControllerTest extends WebTestCase
 {
+    protected function setUp(): void
+    {
+        self::runCommand('doctrine:fixtures:load');
+    }
+
     public function testFilmPageWhileNotLoggedIn(): void
     {
         $client = static::createClient();
