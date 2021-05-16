@@ -7,5 +7,9 @@
         <span>{{ film.title }}</span><br>
         <span>{{ film.getDirector() }}</span><br>
         <span>{{ film.getReleaseDate() }}</span><br>
+        {% for character in film.getCharacters() %}
+            <span>{{ character.name }}</span><br>
+            <span>{{ character.gender }}</span><br>
+        {% endfor %}
     </div>
 {% endblock %}

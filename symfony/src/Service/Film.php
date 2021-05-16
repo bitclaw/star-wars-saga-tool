@@ -45,7 +45,7 @@ class Film
         $this->em->flush();
     }
 
-    public function addCharacters(FilmEntity $film)
+    public function addCharacters(\App\Entity\Film $film)
     {
         $batchSize = 20;
         $endpoints = $film->getCharacterEndpoints();
@@ -54,7 +54,9 @@ class Film
             $response = $this->swapi->fetch($endpoint);
             $character = new Character;
             $character->setName($response['name']);
-            $character->setGender('gender');
+            $character->setGender($response['gender']);
+            $film->addCharacter($character);
+            $this->em->persist($character);
 
             if (($i % $batchSize) === 0) {
                 $this->em->flush();
