@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+<h1>Film master page</h1>
+
 <ul id="navigation">
     {% for film in films %}
         <li>
-            <a href="#">
+            <a href="{{ path('film_detail', {'id': film.id}) }}">
                 {{ film.title }}
             </a>
             <span>{{ film.getReleaseDate() }}</span>

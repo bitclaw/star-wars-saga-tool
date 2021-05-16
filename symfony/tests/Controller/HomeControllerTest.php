@@ -52,6 +52,6 @@ class HomeControllerTest extends WebTestCase
         $this->client->loginUser($testUser);
         $this->client->request('GET', '/');
         $this->assertResponseIsSuccessful();
-        // $this->assertSelectorTextContains('h1', 'Hello John!');
+        $this->assertSelectorTextContains('h1', 'Film master page');
     }
 }
