@@ -47,3 +47,9 @@ $ php bin/console make:controller ProductController
 ```bash
 $ php bin/console cache:clear
 ```
+
+## Testing
+
+```bash
+$  php ./vendor/bin/phpunit
+```

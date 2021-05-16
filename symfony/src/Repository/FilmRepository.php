@@ -15,15 +15,9 @@ use Doctrine\Persistence\ObjectManager;
  */
 class FilmRepository extends ServiceEntityRepository
 {
-    /**
-     * @var ObjectManager
-     */
-    private $manager;
-
-    public function __construct(ManagerRegistry $registry, ObjectManager $manager)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Film::class);
-        $this->manager = $manager;
     }
 
     public function saveFilm(...$data)
