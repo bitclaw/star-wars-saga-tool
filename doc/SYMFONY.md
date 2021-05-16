@@ -5,7 +5,6 @@
 ```bash
 $ composer install
 $ php bin/console doctrine:migrations:migrate
-$ php bin/console doctrine:fixtures:load
 $ chmod -R 777 symfony/var
 ```
 
@@ -27,7 +26,6 @@ $ php bin/console make:migration
 # Run all migrations
 $ php bin/console doctrine:migrations:migrate
 $ php bin/console doctrine:query:sql 'SELECT * FROM user'
-$ php bin/console doctrine:fixtures:load
 $ php bin/console doctrine:migrations:execute --up 'DoctrineMigrations\Version20210515194338'
 $ php bin/console doctrine:migrations:execute --down 'DoctrineMigrations\Version20210515194338'
 ```
@@ -56,4 +54,7 @@ $ php ./vendor/bin/phpunit
 $ php bin/console --env=test doctrine:database:create
 # create the tables/columns in the test database
 $ php bin/console --env=test doctrine:schema:create
+$ php bin/console make:fixtures
+$ php bin/console doctrine:fixtures:load
+$ php bin/console make:test
 ```
