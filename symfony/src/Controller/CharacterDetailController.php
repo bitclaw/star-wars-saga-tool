@@ -28,7 +28,7 @@ class CharacterDetailController extends AbstractController
 
         if (!$character->getSpecies()) {
             $species = $swapi->fetch(self::SWAPI_SPECIES_ENDPOINT)['results'];
-            $speciesService->create($species);
+            $speciesService->createMany($species);
         }
 
         return $this->render('character/detail.html.twig', [

@@ -18,6 +18,13 @@ class Species
         $this->em = $em;
     }
 
+    public function createMany(array $species)
+    {
+        foreach ($species as $type) {
+            $this->create($type);
+        }
+    }
+
     public function create(array $species)
     {
         $entity = new SpeciesEntity();
