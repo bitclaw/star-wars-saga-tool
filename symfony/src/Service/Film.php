@@ -15,6 +15,13 @@ class Film
         $this->em = $em;
     }
 
+    public function createMany(array $films)
+    {
+        foreach ($films as $film) {
+            $this->create($film);
+        }
+    }
+
     public function create(array $film)
     {
         // may validate here later

@@ -22,12 +22,10 @@ class HomeController extends AbstractController
         $filmCount = $repository->count([]);
         if ($filmCount === 0) {
             $films = $swapi->fetchFilms()['results'];
-            foreach ($films as $film) {
-                $filmService->create($film);
-            }
-        } else {
-            $films = $repository->findAll();
+            $filmService->createMany($films);
         }
+
+        $films = $repository->findAll();
 
         return $this->render('film/index.html.twig', [
             'films' => $films,

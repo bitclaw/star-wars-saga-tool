@@ -25,7 +25,8 @@ class HomeControllerTest extends WebTestCase
         // $this->encoder = new UserPasswordEncoderInterface();
     }
 
-    public function setUp(): void {
+    public function setUp(): void
+    {
         $this->client = static::createClient();
 
         // @todo: Figure out how to load fixtures automatically for some tests. Much easier in Laravel :( .
@@ -47,15 +48,10 @@ class HomeControllerTest extends WebTestCase
     public function testFilmPageWhileLoggedIn(): void
     {
         $userRepository = static::$container->get(UserRepository::class);
-
-        // retrieve the test user
         $testUser = $userRepository->findOneByEmail('user@gmail.com');
-        // simulate $testUser being logged in
         $this->client->loginUser($testUser);
-
-        // test e.g. the profile page
         $this->client->request('GET', '/');
-         $this->assertResponseIsSuccessful();
+        $this->assertResponseIsSuccessful();
         // $this->assertSelectorTextContains('h1', 'Hello John!');
     }
 }
