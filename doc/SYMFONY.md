@@ -37,6 +37,8 @@ $ php bin/console doctrine:migrations:execute --down 'DoctrineMigrations\Version
 ```bash
 $ symfony console make:entity
 $ php bin/console make:entity --regenerate
+// generates getter/setter methods for one specific Entity
+$ php bin/console make:entity --regenerate App\\Entity\\Film
 $ php bin/console make:controller ProductController
 ```
 
