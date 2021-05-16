@@ -19,14 +19,15 @@ class HomeController extends AbstractController
     {
         $repository = $entityManager->getRepository(Film::class);
         $filmCount = $repository->count([]);
-        if ($filmCount === 0) {
-            $films = $swapi->fetchFilms()['results'];
-            foreach ($films as $film) {
-                $repository->saveFilm($film);
-            }
-        } else {
-            $films = $repository->findAll();
-        }
+        $films = $swapi->fetchFilms()['results'];
+//        if ($filmCount === 0) {
+//            $films = $swapi->fetchFilms()['results'];
+//            foreach ($films as $film) {
+//                $repository->saveFilm($film);
+//            }
+//        } else {
+//            $films = $repository->findAll();
+//        }
 
         return $this->render('film/index.html.twig', [
             'films' => $films,

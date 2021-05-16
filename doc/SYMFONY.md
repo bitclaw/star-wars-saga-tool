@@ -57,4 +57,6 @@ $ php bin/console --env=test doctrine:schema:create
 $ php bin/console make:fixtures
 $ php bin/console doctrine:fixtures:load
 $ php bin/console make:test
+# Load the fixtures for the test environment/database
+$ APP_ENV=test symfony console doctrine:fixtures:load
 ```

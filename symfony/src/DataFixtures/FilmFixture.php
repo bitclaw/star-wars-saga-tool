@@ -27,6 +27,7 @@ class FilmFixture extends Fixture
         $entity->setDirector('George Lucas');
         $entity->setProducer('Gary Kurtz, Rick McCallum');
         $entity->setReleaseDate('1977-05-25');
+        $entity->setUrl('http://swapi.dev/api/films/1/');
         $entity->setCharacters([
             "http://swapi.dev/api/people/1/",
             "http://swapi.dev/api/people/2/",
