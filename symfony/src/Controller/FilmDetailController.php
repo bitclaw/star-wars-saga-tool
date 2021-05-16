@@ -21,7 +21,10 @@ class FilmDetailController extends AbstractController
         $id = (int)$request->get('id');
         $repository = $entityManager->getRepository(FilmEntity::class);
         $film = $repository->find($id);
-        $filmService->addCharacters($film);
+
+        if ($film->getCharacters()->count() === 0) {
+            $filmService->addCharacters($film);
+        }
 
         return $this->render('film/detail.html.twig', [
             'film' => $film,
