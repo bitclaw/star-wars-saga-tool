@@ -4,15 +4,14 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class HomeControllerTest extends WebTestCase
+class SecurityControllerTest extends WebTestCase
 {
     public function testSomething(): void
     {
-        $this->markTestSkipped();
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/login');
 
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Hello World');
+        $this->assertSelectorTextContains('h1', 'Please sign in');
     }
 }
