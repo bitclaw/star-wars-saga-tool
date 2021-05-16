@@ -32,6 +32,7 @@ class Film
             ->setStarships($film['starships'])
             ->setVehicles($film['vehicles'])
             ->setSpecies($film['species'])
+            ->setUrl($film['url'])
             ->setCreatedAt(new \DateTime())
             ->setUpdatedAt(new \DateTime())
         ;
