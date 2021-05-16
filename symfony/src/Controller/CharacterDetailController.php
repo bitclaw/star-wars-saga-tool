@@ -26,6 +26,7 @@ class CharacterDetailController extends AbstractController
         $repository = $entityManager->getRepository(CharacterEntity::class);
         $character = $repository->find($id);
 
+        // @todo: This is not working correctly, we need to set the species_id in the characters table.
         if (!$character->getSpecies()) {
             $species = $swapi->fetch(self::SWAPI_SPECIES_ENDPOINT)['results'];
             $speciesService->createMany($species);

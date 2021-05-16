@@ -9,7 +9,7 @@
         <span>{{ character.getGender() }}</span><br>
         <span>Species</span>
         <ul id="navigation">
-            {% for species in character->getSpecies() %}
+            {% for species in character.getSpecies() %}
                 <li>
                     <span>{{ species.getName() }}</span>
                     <span>{{ species.getClassification() }}</span>
