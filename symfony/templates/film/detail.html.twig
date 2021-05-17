@@ -13,9 +13,11 @@
             <span>{{ film.getReleaseDate() }}</span><br>
         </div>
 
+        <div style="margin-left: 30px">Characters in movie:</div>
+
         <ul id="navigation">
             {% for character in film.getCharacters() %}
-                <div style="margin-bottom: 15px;">
+                <div style="margin-bottom: 10px;">
                     <li>
                         <span>Character name:</span>
                         <a href="{{ path('character_detail', {'id': character.id}) }}">
