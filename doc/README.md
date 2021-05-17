@@ -1,6 +1,6 @@
 # Pages
 
-Login page: https://star-wars-saga-tool.herokuapp.com/login
+Login page: https://star-wars-saga-tool.herokuapp.com/login. On login redirects to film page. 
 Logout: https://star-wars-saga-tool.herokuapp.com/logout
 Film page: https://star-wars-saga-tool.herokuapp.com/
 Film detail page: https://star-wars-saga-tool.herokuapp.com/film-detail/2
