@@ -22,6 +22,7 @@ class FilmDetailControllerTest extends WebTestCase
 
     public function testFilmPageWhileLoggedIn(): void
     {
+        $this->markTestIncomplete();
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
         $testUser = $userRepository->findOneByEmail('user@gmail.com');
