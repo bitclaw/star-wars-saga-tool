@@ -30,7 +30,7 @@ class Species
     public function create(Character $character)
     {
         $speciesEndpoint = $character->getSpeciesEndpoints();
-        $response = $this->swapi->fetch($speciesEndpoint['results']);
+        $response = $this->swapi->fetch($speciesEndpoint);
         $species = new SpeciesEntity();
         $species
             ->setName($response['name'])
