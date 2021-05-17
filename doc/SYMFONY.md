@@ -50,6 +50,7 @@ $ php bin/console cache:clear
 
 ```bash
 $ php ./vendor/bin/phpunit
+$ php bin/console --env=test doctrine:schema:drop --force
 # create the test database (star_wars_saga_tool_test)
 $ php bin/console --env=test doctrine:database:create
 # create the tables/columns in the test database
