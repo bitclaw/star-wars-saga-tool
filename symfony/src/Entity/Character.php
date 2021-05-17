@@ -39,7 +39,7 @@ class Character
     private $speciesEndpoints = [];
 
     /**
-     * @OneToOne(targetEntity="App\Entity\Species",cascade={"persist"})
+     * @OneToOne(targetEntity="App\Entity\Species")
      * @JoinColumn(name="species_id", referencedColumnName="id")
      */
     private $species;
