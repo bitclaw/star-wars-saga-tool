@@ -93,7 +93,7 @@ class Character
 
     public function addFilm(Film $film): self
     {
-        if (!$this->films->contains($film)) {
+        if (! $this->films->contains($film)) {
             $this->films[] = $film;
         }
         return $this;
