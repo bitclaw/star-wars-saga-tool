@@ -44,4 +44,5 @@ EACH DEPLOY
 $ heroku run "php bin/console cache:clear" -a star-wars-saga-tool
 $ heroku run "php bin/console doctrine:migrations:migrate" -a star-wars-saga-tool
 $ heroku run "php bin/console doctrine:fixtures:load" -a star-wars-saga-tool
+$ heroku run "composer dump-autoload --no-dev --classmap-authoritative" -a star-wars-saga-tool
 ```

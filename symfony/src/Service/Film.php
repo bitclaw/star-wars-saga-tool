@@ -48,13 +48,28 @@ class Film
         $this->em->flush();
     }
 
-    public function addCharacters(\App\Entity\Film $film)
+    public function addCharacters(FilmEntity $film)
     {
         $batchSize = 20;
         $endpoints = $film->getCharacterEndpoints();
         $i = count($endpoints);
         foreach($endpoints as $endpoint) {
             $response = $this->swapi->fetch($endpoint);
+            $this->addCharacter($response, $film);
+            if (($i % $batchSize) === 0) {
+                $this->em->flush();
+                $this->em->clear(); // Detaches all objects from Doctrine!
+            }
+        }
+
+        $this->em->flush(); //Persist objects that did not make up an entire batch
+        $this->em->clear();
+    }
+
+    private function addCharacter($response, FilmEntity $film)
+    {
+        $dbCharacter = $this->characterExists($response);
+        if (! $dbCharacter) {
             $character = new Character;
             $character->setName($response['name']);
             $character->setGender($response['gender']);
@@ -62,13 +77,13 @@ class Film
             $character->setSpeciesEndpoints($speciesEndpoints);
             $film->addCharacter($character);
             $this->em->persist($character);
-
-            if (($i % $batchSize) === 0) {
-                $this->em->flush();
-                $this->em->clear(); // Detaches all objects from Doctrine!
-            }
         }
-        $this->em->flush(); //Persist objects that did not make up an entire batch
-        $this->em->clear();
+    }
+
+    private function characterExists($characterData)
+    {
+        return $this->em->getRepository('App\Entity\Character')->findOneBy([
+            'name' => $characterData['name'],
+        ]);
     }
 }
