@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film Detail Page{% endblock %}
+{% block body %}
+    <h1>Film detail page</h1>
+    <div>
+        <div style="margin-left: 30px;">
+            <span>Title:</span>
+            <span>{{ film.title }}</span><br>
+            <span>Director:</span>
+            <span>{{ film.getDirector() }}</span><br>
+            <span>Release date:</span>
+            <span>{{ film.getReleaseDate() }}</span><br>
+        </div>
+
+        <div style="margin-left: 30px">Characters in movie:</div>
+
+        <ul id="navigation">
+            {% for character in film.getCharacters() %}
+                <div style="margin-bottom: 10px;">
+                    <li>
+                        <span>Character name:</span>
+                        <a href="{{ path('character_detail', {'id': character.id}) }}">
+                            {{ character.name }}
+                        </a>
+                    </li>
+                    <span>Gender:</span>
+                    <span>{{ character.gender }}</span>
+                </div>
+
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Character Detail Page{% endblock %}
+{% block body %}
+    <div style="margin-left: 30px;">
+        <span>Name:</span>
+        <span>{{ character.getName() }}</span><br>
+        <span>Gender:</span>
+        <span>{{ character.getGender() }}</span><br>
+        <span>Species information:</span>
+        <ul id="navigation">
+            <li>
+                <span>Name:</span>
+                <span>{{ character.getSpecies().getName()  }}</span><br>
+            </li>
+            <li>
+                <span>Classification:</span>
+                <span>{{ character.getSpecies().getClassification()  }}</span><br>
+            </li>
+            <li>
+                <span>Designation:</span>
+                <span>{{ character.getSpecies().getDesignation()  }}</span><br>
+            </li>
+            <li>
+                <span>Average Height:</span>
+                <span>{{ character.getSpecies().getAverageHeight()  }}</span><br>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

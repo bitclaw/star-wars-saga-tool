@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210515194338 extends AbstractMigration
+final class Version20210517042250 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,14 @@ final class Version20210515194338 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, roles JSON NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE `character` DROP INDEX IDX_937AB034B2A1D860, ADD UNIQUE INDEX UNIQ_937AB034B2A1D860 (species_id)');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_A50FF7125E237E06 ON species (name)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE user');
+        $this->addSql('ALTER TABLE `character` DROP INDEX UNIQ_937AB034B2A1D860, ADD INDEX IDX_937AB034B2A1D860 (species_id)');
+        $this->addSql('DROP INDEX UNIQ_A50FF7125E237E06 ON species');
     }
 }
