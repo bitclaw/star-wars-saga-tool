@@ -29,7 +29,7 @@ class Species
 
     public function create(Character $character)
     {
-        $speciesEndpoint = $character->getSpeciesEndpoints();
+        $speciesEndpoint = $character->getSpeciesEndpoints()[0];
         $response = $this->swapi->fetch($speciesEndpoint);
         $species = new SpeciesEntity();
         $species
