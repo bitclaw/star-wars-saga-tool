@@ -24,7 +24,7 @@ class CharacterDetailController extends AbstractController
         $repository = $entityManager->getRepository(CharacterEntity::class);
         $character = $repository->find($id);
 
-        if ($character->getSpecies()->count() === 0) {
+        if (!$character->getSpecies()) {
             $speciesService->create($character);
         }
 
