@@ -12,6 +12,16 @@
                     {{ character.name }}
                 </a>
             </li>
+            <br>
+            {% for film in character.getFilms() %}
+                <span>Films:</span><br>
+                <span>
+                    <a href="{{ path('film_detail', {'id': film.id}) }}">
+                        {{ film.title }}
+                    </a>
+                </span><br>
+            {% endfor %}
+            <br>
         {% endfor %}
     </ul>
 {% endblock %}
