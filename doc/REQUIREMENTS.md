@@ -3,12 +3,12 @@
 Epic:
 Our client needs a tool to display data from the Star Wars saga.
 We can use https://swapi.dev/ to retrieve the initial data, but once it's retrieved we need to store it in our database
-to avoid querying the API twice for the same data.
+to avoid querying the API twice for the same data. (DONE)
 
 Don't pull all the data from the API at once, just retrieve it as it's needed. So our database will act as a cache layer,
-it should be queried initially, and only if the data is not present, then query the API.
+it should be queried initially, and only if the data is not present, then query the API. (DONE)
 
-The web application needs to be behind a login screen, only authenticated users can use it.
+The web application needs to be behind a login screen, only authenticated users can use it. (DONE)
 
 Data we need:
 - Film
@@ -26,9 +26,9 @@ Data we need:
 User stories:
 
 1.  As a user, I want to see a page with a full list of Star Wars films, including title and release date, so that I can
-    navigate through each film and learn more about them.
+    navigate through each film and learn more about them. (DONE)
     
-    a. I want to click on a film’s title to go to its own page where I can see all its details.
+    a. I want to click on a film’s title to go to its own page where I can see all its details. (DONE)
     b. I want to be able to click on a character’s name so that I can visit that character’s own page and learn more about them.
 
 2.  As a user, I want to have a page where I can browse all Star Wars characters, and for each, see Name, their Species,
