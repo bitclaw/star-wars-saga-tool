@@ -29,28 +29,28 @@ User stories:
     navigate through each film and learn more about them. (DONE)
     
     a. I want to click on a film’s title to go to its own page where I can see all its details. (DONE)
-    b. I want to be able to click on a character’s name so that I can visit that character’s own page and learn more about them.
+    b. I want to be able to click on a character’s name so that I can visit that character’s own page and learn more about them. (PENDING)
 
 2.  As a user, I want to have a page where I can browse all Star Wars characters, and for each, see Name, their Species,
-    and the films they are on. Names and films should be clickable so that I can visit their specific pages.
+    and the films they are on. Names and films should be clickable so that I can visit their specific pages. (PENDING)
 
-3. The system should send an email notification every time a user logs in, the email address should be configurable.
+3. The system should send an email notification every time a user logs in, the email address should be configurable. (PENDING)
 
 Requirements:
 
-- Symfony 4 (or 5)
-- Twig 3
-- MySQL (or MariaDB)
+- Symfony 4 (or 5). Done in Symfony 5.2. See composer.json. 
+- Twig 3. Done with Twig 3.3.1. See symfony/vendor/twig/twig/src/Environment.php after running `composer install`. 
+- MySQL (or MariaDB). Used MySQL 8.0 on Heroku. See symfony/config/packages/doctrine.yaml. 
 
 Deliverables:
 
-- Before start working we need you to provide an estimate for this test to be done.
-- Provide the ERD
-- Functional web application, deployed in your favorite hosting (if you don't have one, you can use a free one like Heroku).
+- Before start working we need you to provide an estimate for this test to be done. (DONE)
+- Provide the ERD. (PENDING)
+- Functional web application, deployed in your favorite hosting (if you don't have one, you can use a free one like Heroku). (DONE)
 - Git repository
-    - Make sure to commit your code as you would do in a regular job, don't just push everything into a single commit.
-    - Follow Git best practices (Git-flow, or anything similar)
-    - If you want to create PR's feel free to assign our developers as reviewers.
+    - Make sure to commit your code as you would do in a regular job, don't just push everything into a single commit. (DONE)
+    - Follow Git best practices (Git-flow, or anything similar). (DONE)
+    - If you want to create PR's feel free to assign our developers as reviewers. (DONE)
 
 Notes:
 - We'll be evaluating your communication skills, ability to understand requirements, and of course the quality
