@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>3f6a0e59-32c5-4141-9c78-42cb7a6f6827.SCHEMA:star_wars_saga_tool</OriginalElement>
+  <nodes>
+    <node x="182.5" y="454.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.film_character</node>
+    <node x="21.0" y="227.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.character</node>
+    <node x="284.0" y="227.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.film</node>
+    <node x="592.0" y="0.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.user</node>
+    <node x="383.0" y="594.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.setting</node>
+    <node x="0.0" y="594.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.doctrine_migration_versions</node>
+    <node x="0.0" y="0.0">3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.species</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.film_character" target="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.film" relationship="REFERENCES">
+      <point x="48.25" y="-47.5" />
+      <point x="327.25" y="429.0" />
+      <point x="415.5" y="429.0" />
+      <point x="0.0" y="88.5" />
+    </edge>
+    <edge source="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.character" target="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.species" relationship="REFERENCES">
+      <point x="0.0" y="-88.5" />
+      <point x="0.0" y="88.5" />
+    </edge>
+    <edge source="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.film_character" target="3f6a0e59-32c5-4141-9c78-42cb7a6f6827.TABLE:star_wars_saga_tool.character" relationship="REFERENCES">
+      <point x="-48.25" y="-47.5" />
+      <point x="230.75" y="429.0" />
+      <point x="142.5" y="429.0" />
+      <point x="0.0" y="88.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="413.5" y="358.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
