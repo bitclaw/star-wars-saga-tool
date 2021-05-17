@@ -24,8 +24,6 @@ class User implements EventSubscriberInterface
             'name' => 'email',
         ]);
 
-
-
         $this->em->flush();
     }
 
