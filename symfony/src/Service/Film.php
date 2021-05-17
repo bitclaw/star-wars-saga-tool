@@ -55,6 +55,8 @@ class Film
             $character = new Character;
             $character->setName($response['name']);
             $character->setGender($response['gender']);
+            $speciesEndpoints = $this->getSpeciesEndpoints($response);
+            $character->setSpeciesEndpoints($speciesEndpoints);
             $film->addCharacter($character);
             $this->em->persist($character);
 
@@ -65,5 +67,11 @@ class Film
         }
         $this->em->flush(); //Persist objects that did not make up an entire batch
         $this->em->clear();
+    }
+
+    // @todo: Semi-hack, will need to rethink my relationships because for humans no species array values are sent back.
+    private function getSpeciesEndpoints(array $response)
+    {
+        return count($response['species']) > 0 ? $response['species'] : ['https://swapi.dev/api/people/1/'];
     }
 }

@@ -29,8 +29,8 @@ class Species
 
     public function create(Character $character)
     {
-        $speciesEndpoint = $character->getSpeciesEndpoints()[0];
-        $response = $this->swapi->fetch($speciesEndpoint);
+        $speciesEndpoint = $character->getSpeciesEndpoints();
+        $response = $this->swapi->fetch($speciesEndpoint[0]);
         $species = new SpeciesEntity();
         $species
             ->setName($response['name'])
@@ -41,6 +41,7 @@ class Species
         $character->setSpecies($species);
 
         $this->em->persist($species);
+        $this->em->persist($character);
         $this->em->flush();
     }
 }
