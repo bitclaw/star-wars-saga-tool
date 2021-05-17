@@ -6,7 +6,6 @@ use App\Repository\SpeciesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"name"})})
  * @ORM\Entity(repositoryClass=SpeciesRepository::class)
  */
 class Species
