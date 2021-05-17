@@ -69,9 +69,16 @@ class Film
         $this->em->clear();
     }
 
-    // @todo: Semi-hack, will need to rethink my relationships because for humans no species array values are sent back.
+    /**
+     *
+     * This is the simplest way since for humans the species array comes back zero so we know in this case it will be
+     * the endpoint https://swapi.dev/api/species/1/.
+     *
+     * @param array $response
+     * @return mixed|string[]
+     */
     private function getSpeciesEndpoints(array $response)
     {
-        return count($response['species']) > 0 ? $response['species'] : ['https://swapi.dev/api/people/1/'];
+        return count($response['species']) > 0 ? $response['species'] : ['https://swapi.dev/api/species/1/'];
     }
 }

@@ -29,7 +29,7 @@ User stories:
     navigate through each film and learn more about them. (DONE)
     
     a. I want to click on a film’s title to go to its own page where I can see all its details. (DONE)
-    b. I want to be able to click on a character’s name so that I can visit that character’s own page and learn more about them. (PENDING)
+    b. I want to be able to click on a character’s name so that I can visit that character’s own page and learn more about them. (DONE)
 
 2.  As a user, I want to have a page where I can browse all Star Wars characters, and for each, see Name, their Species,
     and the films they are on. Names and films should be clickable so that I can visit their specific pages. (PENDING)

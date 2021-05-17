@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * @ORM\Entity(repositoryClass=CharacterRepository::class)
@@ -38,7 +39,7 @@ class Character
     private $speciesEndpoints = [];
 
     /**
-     * @ManyToOne(targetEntity="Species",cascade={"persist"})
+     * @OneToOne(targetEntity="App\Entity\Species",cascade={"persist"})
      * @JoinColumn(name="species_id", referencedColumnName="id")
      */
     private $species;
