@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Settings{% endblock %}
+
+{% block body %}
+    <form method="post">
+        <h1>Settings page</h1>
+        {% for setting in settings %}
+            <div style="padding-bottom: 10px">
+                <label for="{{ setting.name }}">{{ setting.name }}</label>
+                <input
+                        type="text"
+                        value="{{ setting.value }}"
+                        name="{{ setting.value }}"
+                        id="{{ setting.name }}"
+                        class="form-control"
+                        required
+                        autofocus
+                >
+            </div>
+        {% endfor %}
+
+        <button class="btn btn-lg btn-primary" type="submit">
+            Save
+        </button>
+    </form>
+{% endblock %}
