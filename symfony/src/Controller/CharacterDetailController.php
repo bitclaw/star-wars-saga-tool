@@ -14,8 +14,6 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class CharacterDetailController extends AbstractController
 {
-    const SWAPI_SPECIES_ENDPOINT = 'https://swapi.dev/api/species/';
-
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/character-detail/{id}",defaults={"id" = 1}, name="character_detail")
@@ -26,10 +24,8 @@ class CharacterDetailController extends AbstractController
         $repository = $entityManager->getRepository(CharacterEntity::class);
         $character = $repository->find($id);
 
-        // @todo: This is not working correctly, we need to set the species_id in the characters table.
-        if (!$character->getSpecies()) {
-            $species = $swapi->fetch(self::SWAPI_SPECIES_ENDPOINT)['results'];
-            $speciesService->createMany($species);
+        if ($character->getSpecies()->count() === 0) {
+            $speciesService->create($character);
         }
 
         return $this->render('character/detail.html.twig', [

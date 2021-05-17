@@ -3,6 +3,7 @@
 // src/Service/Species.php
 namespace App\Service;
 
+use App\Entity\Character;
 use App\Entity\Species as SpeciesEntity;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -13,9 +14,10 @@ class Species
      */
     private $em;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em, Swapi $swapi)
     {
         $this->em = $em;
+        $this->swapi = $swapi;
     }
 
     public function createMany(array $species)
@@ -25,17 +27,20 @@ class Species
         }
     }
 
-    public function create(array $species)
+    public function create(Character $character)
     {
-        $entity = new SpeciesEntity();
-        $entity
-            ->setName($species['name'])
-            ->setClassification($species['classification'])
-            ->setDesignation($species['designation'])
-            ->setAverageHeight($species['average_height'])
+        $speciesEndpoint = $character->getSpeciesEndpoints();
+        $response = $this->swapi->fetch($speciesEndpoint['results']);
+        $species = new SpeciesEntity();
+        $species
+            ->setName($response['name'])
+            ->setClassification($response['classification'])
+            ->setDesignation($response['designation'])
+            ->setAverageHeight($response['average_height'])
         ;
+        $character->setSpecies($species);
 
-        $this->em->persist($entity);
+        $this->em->persist($species);
         $this->em->flush();
     }
 }

@@ -50,7 +50,7 @@ class Film
         $batchSize = 20;
         $endpoints = $film->getCharacterEndpoints();
         $i = count($endpoints);
-        foreach($film->getCharacterEndpoints() as $endpoint) {
+        foreach($endpoints as $endpoint) {
             $response = $this->swapi->fetch($endpoint);
             $character = new Character;
             $character->setName($response['name']);

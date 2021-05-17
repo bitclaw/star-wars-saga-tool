@@ -33,6 +33,11 @@ class Character
     private $gender;
 
     /**
+     * @ORM\Column(type="json", name="species_endpoints")
+     */
+    private $speciesEndpoints = [];
+
+    /**
      * @ManyToOne(targetEntity="Species",cascade={"persist"})
      * @JoinColumn(name="species_id", referencedColumnName="id")
      */
@@ -106,9 +111,21 @@ class Character
         return $this->species;
     }
 
-    public function setCategory(?Species $species): self
+    public function setSpecies(?Species $species): self
     {
         $this->species = $species;
+        return $this;
+    }
+
+    public function getSpeciesEndpoints(): ?array
+    {
+        return $this->speciesEndpoints;
+    }
+
+    public function setSpeciesEndpoints(array $species): self
+    {
+        $this->speciesEndpoints = $species;
+
         return $this;
     }
 }
