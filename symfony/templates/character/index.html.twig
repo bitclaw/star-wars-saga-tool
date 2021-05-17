@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Character Master Page{% endblock %}
+
+{% block body %}
+    <h1>Character master page</h1>
+
+    <ul id="navigation">
+        {% for character in characters %}
+            <li>
+                <a href="{{ path('character_detail', {'id': character.id}) }}">
+                    {{ character.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

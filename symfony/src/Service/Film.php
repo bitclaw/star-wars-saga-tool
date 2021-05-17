@@ -4,11 +4,14 @@
 namespace App\Service;
 
 use App\Entity\Character;
+use App\Traits\GetsSpeciesEndpoints;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Film as FilmEntity;
 
 class Film
 {
+    use GetsSpeciesEndpoints;
+
     /**
      * @var EntityManagerInterface
      */
@@ -67,18 +70,5 @@ class Film
         }
         $this->em->flush(); //Persist objects that did not make up an entire batch
         $this->em->clear();
-    }
-
-    /**
-     *
-     * This is the simplest way since for humans the species array comes back zero so we know in this case it will be
-     * the endpoint https://swapi.dev/api/species/1/.
-     *
-     * @param array $response
-     * @return mixed|string[]
-     */
-    private function getSpeciesEndpoints(array $response)
-    {
-        return count($response['species']) > 0 ? $response['species'] : ['https://swapi.dev/api/species/1/'];
     }
 }
