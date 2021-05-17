@@ -3,10 +3,9 @@
 namespace App\Tests\Controller;
 
 use App\Repository\UserRepository;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
-class HomeControllerTest extends WebTestCase
+class FilmControllerTest extends WebTestCase
 {
     /**
      * @var \Symfony\Bundle\FrameworkBundle\KernelBrowser

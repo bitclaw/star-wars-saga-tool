@@ -1,5 +1,5 @@
 <?php
-// src/Controller/HomeController.php
+
 namespace App\Controller;
 
 use App\Entity\Film as FilmEntity;
@@ -10,7 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Service\Swapi;
 use App\Service\Film;
 
-class HomeController extends AbstractController
+class FilmController extends AbstractController
 {
     const SWAPI_FILMS_ENDPOINT = 'https://swapi.dev/api/films/';
     /**
